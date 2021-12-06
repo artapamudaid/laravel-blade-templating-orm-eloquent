@@ -38,63 +38,38 @@
 
                     <tbody class="bg-white divide-y divide-gray-200">
 
+                        @forelse ($players as $player)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                            src="https://resources.premierleague.com/premierleague/photos/players/250x250/p165153.png"
-                                            alt="">
+                                        <img class="h-10 w-10 rounded-full" src="{{ $player->photo ?? '' }}"
+                                            alt="{{ 'Photo of ' . $player->name ?? '' }}">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">
-                                            Timo Werner
+                                            {{ $player->name }}
                                         </div>
                                         <div class="text-sm text-gray-500">
-                                            180 Cm
+                                            {{ $player->height }} Cm
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                Chelsea FC
+                                {{ $player->clubs->name }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                Forward
+                                {{ $player->position }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                            src="https://resources.premierleague.com/premierleague/photos/players/250x250/p103025.png"
-                                            alt="">
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">
-                                            Riyad Mahrez
-                                        </div>
-                                        <div class="text-sm text-gray-500">
-                                            179 Cm
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                Manchester City
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                Forward
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
-                            </td>
-                        </tr>
+                        @empty
+
+                        @endforelse
 
                         <!-- More items... -->
                     </tbody>

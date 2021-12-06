@@ -24,7 +24,7 @@ class Clubs extends Model
     //relation with stadiums table
     public function stadiums()
     {
-        return $this->belongsTo('App\Moddels\Stadiums', 'stadiums_id', 'id');
+        return $this->belongsTo('App\Models\Stadiums', 'stadiums_id', 'id');
     }
 
     //relation to managers table
@@ -42,11 +42,11 @@ class Clubs extends Model
     //relation to matches table
     public function match_clubs()
     {
-        return $this->hasMany('App\Models\Matches', 'clubs_id');
+        return $this->hasOne('App\Models\Matches', 'clubs_id');
     }
 
     public function match_rivals()
     {
-        return $this->hasMany('App\Models\Matches', 'rivals_id');
+        return $this->hasOne('App\Models\Matches', 'clubs_id');
     }
 }

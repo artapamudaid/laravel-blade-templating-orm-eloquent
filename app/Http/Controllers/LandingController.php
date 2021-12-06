@@ -33,10 +33,10 @@ class LandingController extends Controller
     {
         $managers = Managers::all();
 
-        return view('pages.landing-page.managers', ['managers' => $$managers]);
+        return view('pages.landing-page.managers', ['managers' => $managers]);
     }
 
-    public function playes()
+    public function players()
     {
         $players = Players::all();
 

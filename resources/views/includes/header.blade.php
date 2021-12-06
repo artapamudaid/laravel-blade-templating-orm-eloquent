@@ -29,7 +29,7 @@
                 <nav
                     class="lg:space-x-12 space-x-0 lg:flex items-center justify-between text-base pt-8 lg:pt-0 lg:space-y-0 space-y-6">
                     <a class="block cursor-pointer nav-1-2" href="{{ route('landing.clubs') }}">Clubs</a>
-                    <a class="block cursor-pointer nav-1-2" href="{{ route('landing.playes') }}">Players</a>
+                    <a class="block cursor-pointer nav-1-2" href="{{ route('landing.players') }}">Players</a>
                     <a class="block cursor-pointer nav-1-2" href="{{ route('landing.managers') }}">Managers</a>
                     <a class="block cursor-pointer nav-1-2" href="{{ route('landing.stadiums') }}">Stadium</a>
                 </nav>

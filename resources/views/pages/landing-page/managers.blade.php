@@ -38,26 +38,27 @@
 
                     <tbody class="bg-white divide-y divide-gray-200">
 
+                        @forelse ($managers as $manager)
+
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                            src="https://resources.premierleague.com/premierleague/photos/players/250x250/man39237.png"
-                                            alt="">
+                                        <img class="h-10 w-10 rounded-full" src="{{ $manager->photo ?? '' }}"
+                                            alt="{{ 'Photo of ' . $manager->name ?? '' }}">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">
-                                            Thomas Tuchel
+                                            {{ $manager->name }}
                                         </div>
                                         <div class="text-sm text-gray-500">
-                                            47 Years
+                                            {{ $manager->old }} Years
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                Chelsea FC
+                                {{ $manager->clubs->name }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 Germany
@@ -67,34 +68,9 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                            src="https://resources.premierleague.com/premierleague/photos/players/250x250/man279.png"
-                                            alt="">
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">
-                                            Jurgen Klopp
-                                        </div>
-                                        <div class="text-sm text-gray-500">
-                                            53 Years
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                Liverpool
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                Germany
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
-                            </td>
-                        </tr>
+                        @empty
+
+                        @endforelse
 
                         <!-- More items... -->
                     </tbody>
