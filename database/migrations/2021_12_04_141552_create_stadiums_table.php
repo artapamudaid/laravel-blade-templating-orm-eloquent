@@ -16,7 +16,7 @@ class CreateStadiumsTable extends Migration
         Schema::create('stadiums', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('capasity');
+            $table->integer('capacity');
             $table->longText('address')->nullable();
             $table->timestamps();
         });

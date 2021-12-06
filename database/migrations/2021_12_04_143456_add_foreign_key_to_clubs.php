@@ -14,7 +14,7 @@ class AddForeignKeyToClubs extends Migration
     public function up()
     {
         Schema::table('clubs', function (Blueprint $table) {
-            $table->foreign('stadium_id', 'stadiums_id_fk1')->references('id')->on('stadiums')->onUpdate('CASCADE')->onDelete('RESTRICT');
+            $table->foreign('stadiums_id', 'stadiums_id_fk1')->references('id')->on('stadiums')->onUpdate('CASCADE')->onDelete('RESTRICT');
         });
     }
 
@@ -26,7 +26,7 @@ class AddForeignKeyToClubs extends Migration
     public function down()
     {
         Schema::table('clubs', function (Blueprint $table) {
-            $table->dropForeign('stadium_id_fk1');
+            $table->dropForeign('stadiums_id_fk1');
         });
     }
 }
