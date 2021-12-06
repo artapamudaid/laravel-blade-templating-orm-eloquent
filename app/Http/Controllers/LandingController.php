@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Clubs;
+use App\Models\Managers;
+use App\Models\Stadiums;
+use App\Models\Matches;
+use App\Models\Players;
+
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -18,22 +24,30 @@ class LandingController extends Controller
 
     public function clubs()
     {
-        return view('pages.landing-page.clubs');
+        $clubs = Clubs::all();
+
+        return view('pages.landing-page.clubs', ['clubs' => $clubs]);
     }
 
     public function managers()
     {
-        return view('pages.landing-page.managers');
+        $managers = Managers::all();
+
+        return view('pages.landing-page.managers', ['managers' => $$managers]);
     }
 
     public function playes()
     {
-        return view('pages.landing-page.players');
+        $players = Players::all();
+
+        return view('pages.landing-page.players', ['players' => $players]);
     }
 
     public function stadiums()
     {
-        return view('pages.landing-page.stadiums');
+        $stadiums = Stadiums::all();
+
+        return view('pages.landing-page.stadiums', ['stadiums' => $stadiums]);
     }
     /**
      * Show the form for creating a new resource.
