@@ -24,7 +24,7 @@ class LandingController extends Controller
 
     public function clubs()
     {
-        $clubs = Clubs::all();
+        $clubs = Clubs::orderBy('thropy', 'desc')->get();
 
         return view('pages.landing-page.clubs', ['clubs' => $clubs]);
     }
